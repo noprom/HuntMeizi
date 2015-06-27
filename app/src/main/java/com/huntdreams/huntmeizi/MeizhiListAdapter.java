@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.huntdreams.huntmeizi.model.Meizhi;
+import com.huntdreams.huntmeizi.model.Meizi;
 import com.huntdreams.huntmeizi.util.ToastUtils;
 import com.squareup.picasso.Picasso;
 
@@ -19,10 +19,10 @@ import java.util.List;
  */
 public class MeizhiListAdapter extends RecyclerView.Adapter<MeizhiListAdapter.ViewHolder> {
 
-    private List<Meizhi> mList;
+    private List<Meizi> mList;
     private Context mContext;
 
-    public MeizhiListAdapter(Context context, List<Meizhi> list) {
+    public MeizhiListAdapter(Context context, List<Meizi> list) {
         this.mList = list;
         this.mContext = context;
     }
@@ -35,8 +35,8 @@ public class MeizhiListAdapter extends RecyclerView.Adapter<MeizhiListAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Meizhi meizi = mList.get(position);
-        holder.meizhi = meizi;
+        Meizi meizi = mList.get(position);
+        holder.meizi = meizi;
         Picasso.with(mContext).load(meizi.getUrl()).into(holder.meiziImgView);
         holder.titleView.setText(meizi.getMid());
     }
@@ -48,7 +48,7 @@ public class MeizhiListAdapter extends RecyclerView.Adapter<MeizhiListAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        Meizhi meizhi;
+        Meizi meizi;
         ImageView meiziImgView;
         TextView titleView;
 

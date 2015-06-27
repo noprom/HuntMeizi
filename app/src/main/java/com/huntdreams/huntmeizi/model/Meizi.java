@@ -5,18 +5,18 @@ import org.litepal.crud.DataSupport;
 /**
  * Created by noprom on 15/6/25.
  */
-public class Meizhi extends DataSupport {
+public class Meizi extends DataSupport {
 
     private String mid;
     private String url;
 
 
-    public Meizhi(String id, String url) {
+    public Meizi(String id, String url) {
         this.mid = id;
         this.url = url;
     }
 
-    public Meizhi() {
+    public Meizi() {
     }
 
     public String getMid() {
@@ -37,7 +37,7 @@ public class Meizhi extends DataSupport {
 
     @Override
     public String toString() {
-        return "Meizhi{" +
+        return "Meizi{" +
                 "id='" + mid + '\'' +
                 ", url='" + url + '\'' +
                 '}';

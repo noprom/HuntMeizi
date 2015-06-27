@@ -1,17 +1,34 @@
 package com.huntdreams.huntmeizi;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.huntdreams.huntmeizi.model.Meizi;
 
-public class MainActivity extends Activity {
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class MainActivity extends SwipeRefreshBaseActivity {
+
+    RecyclerView mRecyclerView;
+    MeizhiListAdapter mMeiziListAdapter;
+    List<Meizi> mMeiziList;
+    Handler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mHandler = new Handler();
+        mMeiziList = new ArrayList<>();
+
+
+
     }
 
     @Override
