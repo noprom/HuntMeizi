@@ -1,7 +1,6 @@
 package com.huntdreams.huntmeizi;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 
@@ -15,7 +14,7 @@ public abstract class SwipeRefreshBaseActivity extends AppCompatActivity {
     MultiSwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
-    public void onPostCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+    public void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         trySetupSwipeRefresh();
     }

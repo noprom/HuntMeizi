@@ -3,6 +3,7 @@ package com.huntdreams.huntmeizi;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -26,9 +27,33 @@ public class MainActivity extends SwipeRefreshBaseActivity {
 
         mHandler = new Handler();
         mMeiziList = new ArrayList<>();
+        mMeiziList.addAll(OldMeizi.init());
+        setUpRecyclerView();
+    }
 
 
+    @Override
+    public void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                getData();
+            }
+        }, 358);
+    }
 
+
+    private void setUpRecyclerView(){
+        mRecyclerView = (RecyclerView) findViewById(R.id.rv_meizhi);
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        mRecyclerView.setLayoutManager(layoutManager);
+        mMeiziListAdapter = new MeizhiListAdapter(this, mMeiziList);
+        mRecyclerView.setAdapter(mMeiziListAdapter);
+    }
+
+    private void getData(){
+        // TODO getData()
     }
 
     @Override
